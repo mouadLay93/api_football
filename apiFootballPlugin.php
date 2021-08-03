@@ -86,6 +86,7 @@ function get_fixture_currentFixtures() {
 		if ($maxresult != 0){
 			for($i=0 ; $i<$maxresult ;$i++){
 				$fixture_slug = sanitize_title($response->api->fixtures[$i]->homeTeam->team_name .' vs '.$response->api->fixtures[$i]->awayTeam->team_name .' in '.$response->api->fixtures[$i]->league->name);
+				echo $fixture_slug;
 				$inserted_fixture = wp_insert_post([
 					'post_name' => $fixture_slug,
 					'post_title' => $fixture_slug,
