@@ -20,7 +20,7 @@ function register_leagueId(){
 // schedule the function every hour
 function corn_add_minute( $schedules ) {
     $schedules['everyminute'] = array(
-            'interval'  => 30,
+            'interval'  => 10,
             'display'   => __( 'every minute' )
     );
     return $schedules;
