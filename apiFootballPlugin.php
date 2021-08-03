@@ -89,7 +89,7 @@ function get_fixture_currentFixtures() {
 				$inserted_fixture = wp_insert_post([
 					'post_name' => $fixture_slug,
 					'post_title' => $fixture_slug,
-					'post_type' => 'current fixtures',
+					'post_type' => 'current_fixtures',
 					'post_status' => 'publish'
 				]);		 
 				echo $fixture_slug;
@@ -129,7 +129,7 @@ function get_fixture_currentFixtures() {
 					'logo' => $response->api->fixtures[$i]->awayTeam->logo,
 					'goals' => $response->api->fixtures[$i]->goalsAwayTeam,
 				);	
-				update_field('field_60f40dc4614b0', $fixture , $inserted_fixture);
+				update_field('field_61090f31a2899', $fixture , $inserted_fixture);
 				update_field('field_60935305ce341', $league , $inserted_fixture);
 				update_field('field_60946f4a3c58b', $homeTeam , $inserted_fixture);
 				update_field('field_60946f923c590', $awayTeam , $inserted_fixture);
