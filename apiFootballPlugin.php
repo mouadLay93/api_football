@@ -44,15 +44,15 @@ function get_fixture_currentFixtures() {
 	$all_post_ids = get_posts(array(
 		'fields'          => 'ids',
 		'posts_per_page'  => -1,
-		'post_type' => 'league'
+		'post_type' => 'leagues'
     ));    
     echo nl2br($all_post_ids);
 	foreach( $all_post_ids as $name => $value):
-		$id = get_field('field_60f40b0147071',$value);
+		$id = get_field('field_6109111740600',$value);
 		echo nl2br("id for ".$value." = ".$id."\r\n");
 	endforeach;
     foreach( $all_post_ids as $name => $value):
-        $id = get_field('field_60f40b0147071',$value);
+        $id = get_field('field_6109111740600',$value);
         echo $id;
         /*date("Y-m-d")*/
 		$curl = curl_init();
