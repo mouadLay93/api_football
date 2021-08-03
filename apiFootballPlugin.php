@@ -18,6 +18,7 @@ function register_leagueId(){
 	]);
 }*/
 // schedule the function every hour
+add_filter( 'cron_schedules', 'corn_add_minute' );
 function corn_add_minute( $schedules ) {
     $schedules['everyminute'] = array(
             'interval'  => 10,
@@ -25,7 +26,7 @@ function corn_add_minute( $schedules ) {
     );
     return $schedules;
 }
-add_filter( 'cron_schedules', 'corn_add_minute' );
+
 // schedule the action if it's not scheluled
 function cronstarter_activation() {
 	if ( ! wp_next_scheduled( 'cornjob' ) ) {
