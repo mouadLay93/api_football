@@ -96,7 +96,7 @@ function get_fixture_currentFixtures() {
 				]);		 
 				echo $fixture_slug;
 				$fixture = array(
-					'fixture_id' => $response->api->fixtures[$i]->fixture_id,
+					'id' => $response->api->fixtures[$i]->fixture_id,
 					'event_date' => $response->api->fixtures[$i]->event_date,
 					'event_time' => $response->api->fixtures[$i]->event_timestamp,
 					'first_half_start' => $response->api->fixtures[$i]->firstHalfStart,
@@ -113,7 +113,7 @@ function get_fixture_currentFixtures() {
 					'penalty' => $response->api->fixtures[$i]->score->penalty,									
 				);
 			    $league = array(
-					'league_id' => $response->api->fixtures[$i]->league_id,
+					'id' => $response->api->fixtures[$i]->league_id,
 					'name' => $response->api->fixtures[$i]->league->name,
 					'country' => $response->api->fixtures[$i]->league->country,
 					'logo' => $response->api->fixtures[$i]->league->logo,
