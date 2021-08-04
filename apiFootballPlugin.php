@@ -21,7 +21,7 @@ function register_leagueId(){
 add_filter( 'cron_schedules', 'corn_add_minute' );
 function corn_add_minute( $schedules ) {
     $schedules['everyminute'] = array(
-            'interval'  => 4000,
+            'interval'  => 43200,
             'display'   => __( 'every minute' )
     );
     return $schedules;
@@ -132,9 +132,9 @@ function get_fixture_currentFixtures() {
 					'goals' => $response->api->fixtures[$i]->goalsAwayTeam,
 				);	
 				update_field('field_61090f31a2899', $fixture , $inserted_fixture);
-				update_field('field_60935305ce341', $league , $inserted_fixture);
-				update_field('field_60946f4a3c58b', $homeTeam , $inserted_fixture);
-				update_field('field_60946f923c590', $awayTeam , $inserted_fixture);
+				update_field('field_610a5a419c8f8', $league , $inserted_fixture);
+				update_field('field_610a5a959c8fe', $homeTeam , $inserted_fixture);
+				update_field('field_610a5b029c903', $awayTeam , $inserted_fixture);
 			}
 		}
 	endforeach;
