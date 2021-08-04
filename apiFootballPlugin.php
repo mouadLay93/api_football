@@ -58,7 +58,7 @@ function get_fixture_currentFixtures() {
         /*date("Y-m-d")*/
 		$curl = curl_init();
 		curl_setopt_array($curl, [
-			CURLOPT_URL => "https://api-football-v1.p.rapidapi.com/v2/fixtures/league/". $id ."/2021-08-13?timezone=Europe%2FLondon",
+			CURLOPT_URL => "https://api-football-v1.p.rapidapi.com/v2/fixtures/league/". $id ."/". date("Y-m-d") ."?timezone=Europe%2FLondon",
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_FOLLOWLOCATION => true,
 			CURLOPT_ENCODING => "",
