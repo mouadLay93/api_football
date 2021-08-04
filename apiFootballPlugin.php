@@ -147,7 +147,7 @@ function get_fixture_currentFixtures() {
 add_filter('cron_schedules','cron_add_every_three_days');
 function cron_add_every_three_days($schedules) {
 $schedules['every_three_days'] = array(
-  'interval' => 259200,
+  'interval' => 60,
   'display' => __( 'Once per 3 days' )
 );
 return $schedules;
@@ -162,7 +162,7 @@ function setup_schedule() {
   }
 }
 /**
- * Add the function that takes care of removing all rows with post_type=post that are older than 30 days
+ * Add the function that takes care of removing all rows with post_type=fixtures that are older than 30 days
  */
 add_action( 'wp', 'delete_expired_coupons_daily' );
 function delete_expired_coupons_daily() {
@@ -173,7 +173,7 @@ function delete_expired_coupons_daily() {
 add_action( 'delete_expired_coupons', 'delete_expired_coupons_callback' );
 function delete_expired_coupons_callback() {
     $args = array(
-        'post_type' => 'coupon',// change the name 
+        'post_type' => 'current_fixtures',// change the name 
         'posts_per_page' => -1
     );
 
