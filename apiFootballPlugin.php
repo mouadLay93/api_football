@@ -21,7 +21,7 @@ function register_leagueId(){
 add_filter( 'cron_schedules', 'corn_add_minute' );
 function corn_add_minute( $schedules ) {
     $schedules['everyminute'] = array(
-            'interval'  => 10,
+            'interval'  => 4000,
             'display'   => __( 'every minute' )
     );
     return $schedules;
